@@ -9,16 +9,25 @@ compileJava.options.encoding = 'UTF-8'
 
 repositories {
   jcenter()
+  maven { url "https://jitpack.io" }
 }
 
 dependencies {
   implementation 'com.google.code.gson:gson:2.8.2'
+  implementation 'com.github.usgs:nshmp-haz:master-SNAPSHOT'
+  testImplementation 'junit:junit:4.12'
 }
 
 sourceSets {
   main {
     java {
       srcDirs = ['src']
+    }
+  }
+
+  test {
+    java {
+      srcDirs = ['test']
     }
   }
 }
